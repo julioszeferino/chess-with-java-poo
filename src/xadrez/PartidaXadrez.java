@@ -14,6 +14,11 @@ public class PartidaXadrez {
         configInicial();
     }
 
+    /**
+     * Retorna uma matriz de pecas de xadrez correspondente ao momento atual da
+     * partida
+     * @return
+     */
     public PecaXadrez[][] getPecas() {
         PecaXadrez[][] mat = new PecaXadrez[tabuleiro.getLinhas()][tabuleiro.getColunas()];
         for (int i = 0; i < tabuleiro.getLinhas(); i++) {
@@ -25,6 +30,10 @@ public class PartidaXadrez {
         return mat;
     }
 
+    /**
+     * Coloca as pecas no tabuleiro em suas posicoes iniciais
+     * @return
+     */
     private void configInicial() {
         tabuleiro.colocaPeca(new Torre(tabuleiro, Cor.BRANCO), new Posicao(2, 1));
         tabuleiro.colocaPeca(new Rei(tabuleiro, Cor.PRETO), new Posicao(0, 4));

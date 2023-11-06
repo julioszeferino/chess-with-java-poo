@@ -14,7 +14,4 @@ public class Torre extends PecaXadrez {
     public String toString() {
         return "T";
     }
-
-
-
 }
