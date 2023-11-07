@@ -31,13 +31,23 @@ public class PartidaXadrez {
     }
 
     /**
+     * Coloca uma peca nova no tabuleiro
+     * @param coluna coluna da posicao
+     * @param linha linha da posicao
+     * @param peca instancia da peca a ser colocada
+     */
+    private void colocaPecaNova(char coluna, int linha, PecaXadrez peca) {
+        tabuleiro.colocaPeca(peca, new PosicaoXadrez(coluna, linha).toPosicao());
+    }
+
+    /**
      * Coloca as pecas no tabuleiro em suas posicoes iniciais
      * @return
      */
     private void configInicial() {
-        tabuleiro.colocaPeca(new Torre(tabuleiro, Cor.BRANCO), new Posicao(2, 1));
-        tabuleiro.colocaPeca(new Rei(tabuleiro, Cor.PRETO), new Posicao(0, 4));
-        tabuleiro.colocaPeca(new Rei(tabuleiro, Cor.BRANCO), new Posicao(7, 4));
+        colocaPecaNova('b', 6, new Torre(tabuleiro, Cor.BRANCO));
+        colocaPecaNova('e', 8, new Rei(tabuleiro, Cor.PRETO));
+        colocaPecaNova('e', 1, new Rei(tabuleiro, Cor.BRANCO));
     }
 
 }
